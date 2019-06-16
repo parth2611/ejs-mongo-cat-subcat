@@ -1,0 +1,45 @@
+<html>
+
+<script>
+function ConfirmDelete()
+{
+  var x = confirm("Are you sure you want to delete?");
+  if (x)
+      return true;
+  else
+    return false;
+}
+</script>
+<body>
+        <%- include('../header'); -%>
+
+    <h1>Display Table</h1>
+    
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Subcategory_name</th>
+            <th>category_name</th>
+ 
+            <th>Action</th>
+        </tr>
+
+        
+        <% for(var i=0; i<subcategory_array.length;i++) { %>
+        <tr>
+            <td><%= i+1 %></td> 
+            <td><%= subcategory_array[i].sub_category_name %></td>
+            <td><%= subcategory_array[i]._category.category_name %></td>
+           
+            <td>
+                    <a href='/subcategory/edit/<%= subcategory_array[i]._id %>'>Edit</a> | 
+                    <a href='/subcategory/delete/<%= subcategory_array[i]._id %>' Onclick="ConfirmDelete()">Delete</a> |
+                    <a href='/subcategory/show/<%= subcategory_array[i]._id %>'>Show</a>
+          
+          </td>
+        </tr>
+        <% } %>
+    </table>
+    
+</body>
+</html>

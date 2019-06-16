@@ -1,0 +1,44 @@
+<html>
+    <script>
+        function ConfirmDelete()
+{
+  var x = confirm("Are you sure you want to delete?");
+  if (x)
+  
+      return true;
+  else
+    return false;
+}
+
+    </script>
+<body>
+        <%- include('../header'); -%>
+
+    <h1>Display Table</h1>
+    <% if(user_array.length>0) { %>
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>category_name</th>
+ 
+            <th>Action</th>
+        </tr>
+        <% for(var i=0; i<user_array.length;i++) { %>
+        <tr>
+            <td><%= i+1 %></td> 
+            <td><%= user_array[i].category_name %></td>
+           
+            <td>
+                    <a href='/category/edit/<%= user_array[i]._id %>'>Edit</a> | 
+                    <a href='/category/delete/<%= user_array[i]._id %>' Onclick="ConfirmDelete()">Delete</a> |
+                    <a href='/category/show/<%= user_array[i]._id %>'>Show</a>
+          
+          </td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+        No Record Found
+      <% } %>
+</body>
+</html>

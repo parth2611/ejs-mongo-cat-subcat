@@ -1,0 +1,23 @@
+<html>
+<body>
+<form method="post" >
+    <table>
+        <tr>
+            <td>Name : </td>
+            <td><input type="text" name="user_name"
+                value="<%= user_array.user_name %>" required> </td>
+        </tr>
+        <tr>
+            <td>Mobile :</td>
+            <td> <input type="text"  name="user_mobile" 
+                value="<%= user_array.user_mobile %>" required> </td>
+        </tr>
+        <tr>
+                <td> <input type="submit">
+                  <input type="button" value="Display" 
+                  onclick="window.location='display';"> </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

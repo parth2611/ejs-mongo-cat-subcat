@@ -1,0 +1,31 @@
+<html>
+<body>
+<%- include('../header'); -%>
+    <form method="post">
+        <h1>Add SubCategory Record</h1>
+        <table>
+            <tr>
+                <td>SubCatName</td>
+                <td> <input type="text" placeholder="Enter Category" name="sub_category_name"></td>
+            </tr>
+            <tr>
+                <td>Catgory</td>
+                <td> 
+                    <select name="_category">
+                    <% for(var i=0; i<category_array.length;i++) { %>
+                        
+                            <option value='<%= category_array[i]._id %>'> <%= category_array[i].category_name %> </option>
+                           
+                           
+                        <% } %></select>
+                </td>
+            </tr>
+           
+            <tr>
+                <td><input type="submit"></td>
+                <td><input type="reset"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
